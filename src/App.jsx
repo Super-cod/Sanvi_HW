@@ -554,7 +554,7 @@ const App = () => {
           <Earth size={earthSize} />
         </EarthWrapper>
       </HeroSection>
-      //ther is too much space between the hero section and the about section
+     
 
       <Section id="about">
         <ContentGrid>
