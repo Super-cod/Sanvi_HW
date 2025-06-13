@@ -165,27 +165,34 @@ const EarthWrapper = styled.div`
   align-items: center;
   width: 100%;
   margin: 0.5rem 0;
-  max-width: 400px;
+  max-width: 600px;
   transition: transform 0.5s ease-out;
   transform: translateY(${props => props.scrollY * -0.2}px);
   z-index: 1;
-  margin-top: -50px;  // Added negative margin to reduce space
-  margin-bottom: -30px;  // Added negative margin to reduce space
+  margin-top: -50px;
+  margin-bottom: -30px;
+  padding: 0 1rem;
+  overflow: visible;
 
   @media (max-width: 1024px) {
-    max-width: 350px;
+    max-width: 500px;
+    padding: 0 0.5rem;
   }
 
   @media (max-width: 768px) {
-    max-width: 300px;
-    margin-top: -40px;  // Adjusted for mobile
-    margin-bottom: -20px;  // Adjusted for mobile
+    max-width: 450px;
+    margin-top: -40px;
+    margin-bottom: -20px;
+    padding: 0;
+    width: 100vw;
   }
 
   @media (max-width: 480px) {
-    max-width: 250px;
-    margin-top: -30px;  // Adjusted for mobile
-    margin-bottom: -15px;  // Adjusted for mobile
+    max-width: 400px;
+    margin-top: -30px;
+    margin-bottom: -15px;
+    padding: 0;
+    width: 100vw;
   }
 `;
 
@@ -490,18 +497,18 @@ const FooterSignature = styled.div`
 
 const App = () => {
   const [scrollY, setScrollY] = useState(0);
-  const [earthSize, setEarthSize] = useState(350);
+  const [earthSize, setEarthSize] = useState(500);
 
   useEffect(() => {
     const handleResize = () => {
       if (window.innerWidth < 480) {
-        setEarthSize(200);
-      } else if (window.innerWidth < 768) {
-        setEarthSize(250);
-      } else if (window.innerWidth < 1024) {
-        setEarthSize(300);
-      } else {
         setEarthSize(350);
+      } else if (window.innerWidth < 768) {
+        setEarthSize(400);
+      } else if (window.innerWidth < 1024) {
+        setEarthSize(450);
+      } else {
+        setEarthSize(500);
       }
     };
 
@@ -551,7 +558,7 @@ const App = () => {
           protect Earth's ecosystems through innovative conservation strategies and community action.
         </HeroSubtitle>
         <EarthWrapper scrollY={scrollY}>
-          <Earth size={earthSize} />
+          <Earth size={earthSize} />  
         </EarthWrapper>
       </HeroSection>
      
