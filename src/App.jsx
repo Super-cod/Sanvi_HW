@@ -161,13 +161,14 @@ const HeroSubtitle = styled.p`
 
 const EarthWrapper = styled.div`
   display: flex;
+  transform: translateX(-50px);
   justify-content: center;
   align-items: center;
   width: 100%;
   margin: 0.5rem 0;
   max-width: 600px;
   transition: transform 0.5s ease-out;
-  transform: translateY(${props => props.scrollY * -0.2}px);
+  transform: translateY(${props => props.scrollY * -0.2}px) translateX(-10px);
   z-index: 1;
   margin-top: -50px;
   margin-bottom: -30px;
