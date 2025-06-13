@@ -109,13 +109,18 @@ const HeroSection = styled(Section)`
   text-align: center;
   min-height: 70vh;
   padding-top: 6rem;
-  padding-bottom: 2rem;  // Reduced bottom padding
+  padding-bottom: 2rem;
   position: relative;
   overflow: hidden;
 
   @media (max-width: 768px) {
-    padding-top: 5rem;
-    padding-bottom: 1.5rem;  // Adjusted for mobile
+    padding-top: 8rem;
+    padding-bottom: 1.5rem;
+  }
+
+  @media (max-width: 480px) {
+    padding-top: 7rem;
+    padding-bottom: 1rem;
   }
 `;
 
